@@ -28,6 +28,7 @@ html {
 :root {
   --clr-base: #fff;
   --btn: #29AB87;
+  --black: #282C35;
 }
 
 body {
@@ -96,15 +97,64 @@ nav {
 }
 /* NAVBAR STYLING ENDS HERE */
 
+/* MOBILE MENU STYLING STARTS HERE */
+.mobile-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 80%;
+
+  color: var(--clr-base);
+  background-color: var(--btn);
+
+  transition: transform 300ms;
+  transform: translateX(-100%);
+}
+
+.mobile-menu.active {
+  transform: translateX(0%);
+}
+
+.mobile__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  
+  font-size: 1.5rem;
+}
+
+.mobile__links--link--black {
+  padding: 10px 20px;
+  
+  background-color: var(--black);
+  color: var(--clr-base)
+}
+
+@media (min-width: 40rem) {
+  .mobile-menu {
+    display: none;
+  }
+}
+/* MOBILE MENU STYLING ENDS HERE */
+
 /* HERO CONTENT STYLING STARTS HERE */
 .hero-content {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 1;
 
   text-align: center;
 
   color: var(--clr-base);
+  
 }
 
 h1 {
@@ -117,6 +167,8 @@ h1 {
 
 .hero-content > p {
   margin-bottom: 20px;
+
+  line-height: 1.5;
 }
 
 .hero-cta {
