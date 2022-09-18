@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* MY CSS RESET START HERE */
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  
+  box-sizing: inherit;
+  
+  letter-spacing: 1px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+
+  color: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+/* MY CSS RESET ENDS HERE */
+
+:root {
+  --clr-base: #fff;
+  --btn: #29AB87;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* FULL PAGE HEADER STYLING STARTS HERE */
+header {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+
+  background-image: url("https://images.unsplash.com/photo-1499174332999-db5291e60435?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* NAVBAR STYLING STARTS HERE */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+
+  font-size: 1.9rem;
+
+  color: var(--clr-base);
+}
+
+.logo {
+  font-weight: bold;
+}
+
+.navbar__links {
+  display: none;
+
+  font-size: 1rem;
+}
+
+.navbar__links--link--green {
+  padding: 10px 20px;
+  
+  background-color: var(--btn);
+  color: var(--clr-base)
+}
+
+.hamburger {
+  cursor: pointer;
+}
+
+@media (min-width: 40rem) {
+  .navbar__links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
+/* NAVBAR STYLING ENDS HERE */
+
+/* HERO CONTENT STYLING STARTS HERE */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  text-align: center;
+
+  color: var(--clr-base);
+}
+
+h1 {
+  margin-bottom: 20px;
+
+  font-size: clamp(2rem, 1.6rem + 2vw, 4rem);
+  
+  text-transform: capitalize;
+}
+
+.hero-content > p {
+  margin-bottom: 20px;
+}
+
+.hero-cta {
+  padding: 15px 30px;
+  border: 0;
+
+  text-transform: uppercase;
+  font-size: 1rem;
+  
+  background-color: var(--btn);
+  color: var(--clr-base);
+
+  cursor: pointer;
+}
+
+@media (min-width: 40rem) {
+  .hero-content {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .hero-content > p,
+  .hero-cta {
+    font-size: 1.2rem;
+  }
+}
+/* HERO CONTENT STYLING ENDS HERE */
+/* FULL PAGE HEADER STYLING ENDS HERE */
+
